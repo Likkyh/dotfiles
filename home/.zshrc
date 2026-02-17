@@ -32,7 +32,9 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
-# Enable Powerlevel10k instant prompt (must be near top of .zshrc)
+# Enable Powerlevel10k instant prompt (must be before any console output)
+# Disabled: incompatible with fastfetch at shell startup
+# To enable: uncomment below and remove fastfetch from the bottom of this file
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
@@ -95,7 +97,6 @@ setopt HIST_IGNORE_SPACE      # Don't record commands starting with space
 setopt HIST_REDUCE_BLANKS     # Remove superfluous blanks from history
 setopt SHARE_HISTORY          # Share history between terminals
 setopt EXTENDED_HISTORY       # Add timestamps to history
-setopt INC_APPEND_HISTORY     # Add commands to history immediately
 
 # ----------------------------------------------------------
 # COLORED MAN PAGES
@@ -131,11 +132,7 @@ if [[ -f ~/.zshrc_aliases ]]; then
 fi
 
 # ----------------------------------------------------------
-# (Moved P10k Config to top)
-# ----------------------------------------------------------
-
-# ----------------------------------------------------------
 # STARTUP
 # ----------------------------------------------------------
 # Display system info with fastfetch on interactive shells
-fastfetch
+command -v fastfetch &>/dev/null && fastfetch
