@@ -38,10 +38,6 @@ set numbercolor cyan
 # ----------------------------------------------------------
 set mouse
 
-# 'set suspend' est obsolète. 
-# Ctrl+Z fonctionne généralement par défaut maintenant.
-# Si tu veux pouvoir couper du texte jusqu'au curseur, utilise 'set zap'
-
 set positionlog
 set smarthome
 set multibuffer
