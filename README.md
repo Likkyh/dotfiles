@@ -28,7 +28,7 @@ dotfiles/
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USER/dotfiles.git ~/dotfiles
+git clone https://github.com/Likkyh/dotfiles.git ~/dotfiles
 cd ~/dotfiles
 
 # Preview what will be linked
